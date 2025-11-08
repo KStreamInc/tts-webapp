@@ -2,25 +2,29 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { SERVICES } from "../constants/Services";
 
 const ServicesSection: React.FC = () => {
+  // Show only first 3 services
+  const visibleServices = SERVICES.slice(0, 3);
+
   return (
     <section className="py-16 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-12">
-          Services
+          Our Services
         </h2>
 
-        {/* GRID: 1 → 2 → 3 columns + equal height rows */}
+        {/* Grid: 1 col on mobile, 2 on sm, 3 on lg */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
-          {SERVICES.map((service, index) => (
+          {visibleServices.map((service, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
             >
-              {/* Fixed image height */}
+              {/* Fixed-height image */}
               <div className="relative w-full h-48 bg-gray-200">
                 <Image
                   src={service.image}
@@ -30,7 +34,7 @@ const ServicesSection: React.FC = () => {
                 />
               </div>
 
-              {/* Content stretches to fill card */}
+              {/* Content grows to fill space */}
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-blue-900 mb-2">
                   {service.title}
@@ -49,6 +53,17 @@ const ServicesSection: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* See All Button */}
+        <div className="flex justify-center mt-12">
+          <Link href="/services">
+            <button className="flex items-center gap-2 bg-gradient-to-r from-blue-900 to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:from-blue-800 hover:to-blue-600 hover:shadow-xl transition-all">
+              See All Services
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
+        </div>
+
       </div>
     </section>
   );
