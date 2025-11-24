@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
+import {
+  MapPin,
+  Phone,
+  Mail,
   Clock,
   Facebook,
   Linkedin,
   Instagram,
-  Twitter
+  Twitter,
 } from "lucide-react";
 
 const Footer: React.FC = () => {
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
     "Elastic Dyeing",
     "Sample Dyeing",
     "Large Scale Production",
-    "Quality Testing"
+    "Quality Testing",
   ];
 
   const quickLinks = [
@@ -30,14 +30,14 @@ const Footer: React.FC = () => {
     { label: "Quality Standards", href: "#quality" },
     { label: "Contact Us", href: "#contact" },
     { label: "Careers", href: "#careers" },
-    { label: "Privacy Policy", href: "#privacy" }
+    { label: "Privacy Policy", href: "#privacy" },
   ];
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" }
+    { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
   return (
@@ -51,7 +51,8 @@ const Footer: React.FC = () => {
               Total Textile Solutions
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Sri Lanka's leading industrial-grade dye supplier and textile processing facility with over 25 years of excellence.
+              Sri Lanka's leading industrial-grade dye supplier and textile
+              processing facility with over 25 years of excellence.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => {
@@ -116,14 +117,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-blue-300" />
-                <span className="text-gray-300">
-                  Colombo, Sri Lanka
-                </span>
+                <span className="text-gray-300">Colombo, Sri Lanka</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0 text-blue-300" />
-                <a 
-                  href="tel:+94XXXXXXXXX" 
+                <a
+                  href="tel:+94XXXXXXXXX"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   +94 XX XXX XXXX
@@ -131,8 +130,8 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0 text-blue-300" />
-                <a 
-                  href="mailto:info@totaltextile.lk" 
+                <a
+                  href="mailto:info@totaltextile.lk"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   info@totaltextile.lk
@@ -141,7 +140,8 @@ const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 mt-1 flex-shrink-0 text-blue-300" />
                 <span className="text-gray-300">
-                  Mon - Fri: 8:00 AM - 5:00 PM<br />
+                  Mon - Fri: 8:00 AM - 5:00 PM
+                  <br />
                   Sat: 8:00 AM - 1:00 PM
                 </span>
               </li>
@@ -157,26 +157,20 @@ const Footer: React.FC = () => {
           <p className="text-gray-300 text-sm text-center md:text-left">
             © {currentYear} Total Textile Solutions. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
-            <a 
-              href="#privacy" 
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a 
-              href="#terms" 
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Terms of Service
-            </a>
-          </div>
         </div>
 
         {/* Developer Credit */}
         <div className="mt-6 pt-6 border-t border-blue-800">
           <p className="text-center text-gray-400 text-sm">
-            Website by <span className="text-blue-300 font-medium">kStream Technologies</span>
+            Website by{" "}
+            <a
+              href="https://kstreamtech.com" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-300 font-medium hover:text-blue-200 hover:underline transition-colors"
+            >
+              kStreamTech
+            </a>
           </p>
         </div>
       </div>

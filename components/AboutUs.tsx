@@ -3,6 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { Award, Users, Target, TrendingUp } from "lucide-react";
+import VisionMission from "./VisionMission";
+import Stats from "./Stats";
+import Values from "./Values";
 
 // Mock QUALITIES data since we don't have the import
 const QUALITIES = [
@@ -79,124 +82,11 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
 
-        {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-10">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">
-              Our Mission
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              To provide exceptional dyeing and textile processing services that exceed our clients' expectations while maintaining sustainable practices and contributing to the growth of Sri Lanka's apparel industry.
-            </p>
-          </div>
+        <VisionMission />
 
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">
-              Our Vision
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              To be the most trusted and innovative textile solutions provider in the region, recognized for our quality, reliability, and commitment to environmental sustainability.
-            </p>
-          </div>
-        </div>
+        <Stats />
 
-        {/* Stats Section */}
-        <div className="bg-gradient-to-r from-blue-900 to-blue-700 rounded-lg shadow-xl p-8 md:p-12 mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div key={index} className="text-center text-white">
-                  <div className="flex justify-center mb-4">
-                    <IconComponent className="w-12 h-12" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm md:text-base opacity-90">
-                    {stat.label}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Our Values - Enhanced */}
-        <div className="mb-20 relative">
-          <h3 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-14 relative inline-block w-full">
-            <span className="relative after:content-[''] after:absolute after:w-24 after:h-1 after:bg-blue-800 after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">
-              Our Core Values
-            </span>
-          </h3>
-
-          {/* Desktop: 2 rows (4 + 3), Mobile: 4 rows (2 + 2 + 2 + 1) */}
-          <div className="flex flex-col items-center gap-6">
-            {/* Row 1: First 4 items on desktop, first 2 on mobile */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
-              {QUALITIES.slice(0, 4).map((quality, index) => (
-                <div
-                  key={index}
-                  className="group bg-white rounded-2xl shadow-md p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden flex flex-col items-center h-full"
-                >
-                  {/* Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-blue-800/10 via-blue-600/10 to-blue-400/10 blur-3xl rounded-2xl"></div>
-
-                  {/* Icon */}
-                  <div className="relative z-10 bg-gradient-to-r from-blue-900 to-blue-700 text-white p-5 rounded-xl mb-5 group-hover:scale-110 transition-transform duration-300">
-                    {getIcon(quality.title)}
-                  </div>
-
-                  <h4 className="relative z-10 text-xl font-semibold text-blue-900 text-center tracking-wide">
-                    {quality.title}
-                  </h4>
-                  <div className="w-0 h-[2px] bg-blue-700 mt-2 transition-all duration-500 group-hover:w-16"></div>
-                </div>
-              ))}
-            </div>
-
-            {/* Row 2: Last 3 items on desktop, items 5-6 on mobile */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl md:max-w-[calc(75%_-_0.75rem)] md:mx-auto">
-              {QUALITIES.slice(4, 6).map((quality, index) => (
-                <div
-                  key={index}
-                  className="group bg-white rounded-2xl shadow-md p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden flex flex-col items-center h-full"
-                >
-                  {/* Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-blue-800/10 via-blue-600/10 to-blue-400/10 blur-3xl rounded-2xl"></div>
-
-                  {/* Icon */}
-                  <div className="relative z-10 bg-gradient-to-r from-blue-900 to-blue-700 text-white p-5 rounded-xl mb-5 group-hover:scale-110 transition-transform duration-300">
-                    {getIcon(quality.title)}
-                  </div>
-
-                  <h4 className="relative z-10 text-xl font-semibold text-blue-900 text-center tracking-wide">
-                    {quality.title}
-                  </h4>
-                  <div className="w-0 h-[2px] bg-blue-700 mt-2 transition-all duration-500 group-hover:w-16"></div>
-                </div>
-              ))}
-              
-              {/* Item 7: Shows in row 2 on desktop, row 4 on mobile */}
-              <div className="col-span-2 md:col-span-1 flex justify-center md:justify-start">
-                <div className="group bg-white rounded-2xl shadow-md p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden flex flex-col items-center h-full w-full md:w-auto">
-                  {/* Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-blue-800/10 via-blue-600/10 to-blue-400/10 blur-3xl rounded-2xl"></div>
-
-                  {/* Icon */}
-                  <div className="relative z-10 bg-gradient-to-r from-blue-900 to-blue-700 text-white p-5 rounded-xl mb-5 group-hover:scale-110 transition-transform duration-300">
-                    {getIcon(QUALITIES[6].title)}
-                  </div>
-
-                  <h4 className="relative z-10 text-xl font-semibold text-blue-900 text-center tracking-wide">
-                    {QUALITIES[6].title}
-                  </h4>
-                  <div className="w-0 h-[2px] bg-blue-700 mt-2 transition-all duration-500 group-hover:w-16"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Values />
       </div>
     </section>
   );
