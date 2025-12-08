@@ -31,8 +31,8 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-blue-900 mb-2">Phone</h4>
-                  <p className="text-gray-600">+94 XX XXX XXXX</p>
-                  <p className="text-gray-600">+94 XX XXX XXXX</p>
+                  <p className="text-gray-600">+94 717 774 120</p>
+                  <p className="text-gray-600">+94 332 231 947</p>
                 </div>
               </div>
             </div>
@@ -44,8 +44,8 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-blue-900 mb-2">Email</h4>
-                  <p className="text-gray-600">info@totaltextile.lk</p>
-                  <p className="text-gray-600">sales@totaltextile.lk</p>
+                  <p className="text-gray-600">sales@tts2020.com</p>
+                  <p className="text-gray-600">sales.tts2020@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -58,8 +58,8 @@ const ContactUs: React.FC = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-blue-900 mb-2">Address</h4>
                   <p className="text-gray-600">
-                    123 Industrial Zone,<br />
-                    Katunayake, Sri Lanka
+                    No. 182, Wanaluwawa,<br />
+                    Kirindiwela, Sri Lanka
                   </p>
                 </div>
               </div>

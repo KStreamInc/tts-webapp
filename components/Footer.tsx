@@ -6,31 +6,30 @@ import {
   Phone,
   Mail,
   Clock,
-  Facebook,
-  Linkedin,
-  Instagram,
-  Twitter,
+  Warehouse,
+  Linkedin,        // Only LinkedIn remains from social icons
 } from "lucide-react";
 import Link from "next/link";
 import { navLinks } from "../constants/NavBar";
-import { SERVICES } from "../constants/Services"; // Import SERVICES
+import { SERVICES } from "../constants/Services";
 
 const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-
-
-
-
-
-
+  // Updated social links — removed FB, IG, Twitter; added Email
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/company/your-company", // replace with real URL
+      label: "LinkedIn",
+    },
+    {
+      icon: Mail,
+      href: "mailto:info@totaltextile.lk",
+      label: "Email us",
+    },
   ];
 
   return (
@@ -56,6 +55,8 @@ const Footer: React.FC = () => {
                     href={social.href}
                     aria-label={social.label}
                     className="bg-blue-800 hover:bg-blue-700 p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
+                    target={social.label === "Email us" ? "_self" : "_blank"}
+                    rel={social.label === "Email us" ? undefined : "noopener noreferrer"}
                   >
                     <IconComponent className="w-5 h-5" />
                   </a>
@@ -110,24 +111,33 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-blue-300" />
-                <span className="text-gray-300">Colombo, Sri Lanka</span>
+                <span className="text-gray-300">No. 182, Wanaluwawa, Kirindiwela, Sri Lanka</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0 text-blue-300" />
                 <a
-                  href="tel:+94XXXXXXXXX"
+                  href="tel:+94717774120"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  +94 XX XXX XXXX
+                  +94 717 774 120
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Warehouse className="w-5 h-5 flex-shrink-0 text-blue-300" />
+                <a
+                  href="tel:+94332231947"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  +94 332 231 947
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0 text-blue-300" />
                 <a
-                  href="mailto:info@totaltextile.lk"
+                  href="mailto:sales.tts2020@gmail.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  info@totaltextile.lk
+                  sales.tts2020@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
