@@ -11,27 +11,20 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+import Link from "next/link";
+import { navLinks } from "../constants/NavBar";
+import { SERVICES } from "../constants/Services"; // Import SERVICES
+
+const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    "Fabric Dyeing",
-    "Garment Washing",
-    "Elastic Dyeing",
-    "Sample Dyeing",
-    "Large Scale Production",
-    "Quality Testing",
-  ];
 
-  const quickLinks = [
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Quality Standards", href: "#quality" },
-    { label: "Contact Us", href: "#contact" },
-    { label: "Careers", href: "#careers" },
-    { label: "Privacy Policy", href: "#privacy" },
-  ];
+
+
+
+
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
@@ -77,14 +70,14 @@ const Footer: React.FC = () => {
               Our Services
             </h4>
             <ul className="space-y-2">
-              {services.map((service, index) => (
+              {SERVICES.map((service, index) => (
                 <li key={index}>
-                  <a
-                    href="#services"
+                  <Link 
+                    href={`/services#${slugify(service.title)}`}
                     className="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
-                    {service}
-                  </a>
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -96,14 +89,14 @@ const Footer: React.FC = () => {
               Quick Links
             </h4>
             <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
+              {navLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    href={link.path}
                     className="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
-                    {link.label}
-                  </a>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { SERVICES } from "../constants/Services";
 import { Minus, Plus } from "lucide-react";
@@ -13,6 +13,18 @@ const AllServices: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const index = SERVICES.findIndex(s => slugify(s.title) === hash);
+      if (index !== -1) {
+        setOpenIndex(index);
+      }
+    }
+  }, []);
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-6">
@@ -22,7 +34,11 @@ const AllServices: React.FC = () => {
 
         <div className="space-y-6">
           {SERVICES.map((service, index) => (
-            <div key={index} className="border-b border-gray-200 pb-2">
+            <div 
+              key={index} 
+              id={slugify(service.title)}
+              className="border-b border-gray-200 pb-2 scroll-mt-24"
+            >
 
               {/* Header */}
               <button

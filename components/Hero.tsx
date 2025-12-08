@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Wrench, Phone } from "lucide-react";
 
 const HeroSection: React.FC = () => {
+  const router = useRouter();
   return (
     <section className="relative flex items-center justify-center min-h-[85vh] bg-cover bg-center text-white overflow-hidden">
       {/* Background Image with darkening filter */}
@@ -28,12 +30,18 @@ const HeroSection: React.FC = () => {
         </p>
 
         <div className="flex justify-center gap-4">
-          <button className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition-all">
+          <button 
+            onClick={() => router.push("/services")}
+            className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition-all"
+          >
             <Wrench className="w-5 h-5" />
             Services
           </button>
 
-          <button className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition">
+          <button 
+            onClick={() => router.push("/contact")}
+            className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition"
+          >
             <Phone className="w-5 h-5" />
             Contact
           </button>
