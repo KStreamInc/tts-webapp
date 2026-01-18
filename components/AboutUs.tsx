@@ -59,10 +59,13 @@ const AboutUs: React.FC = () => {
         {/* Company Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Image */}
-          <div className="relative h-96 rounded-lg overflow-hidden shadow-xl bg-gray-200">
-            <div className="flex items-center justify-center h-full text-gray-400">
-              [Image Placeholder]
-            </div>
+          <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
+            <Image
+              src="/about_image.png"
+              alt="About Total Textile Solutions"
+              fill
+              className="object-cover"
+            />
           </div>
 
           {/* Content */}

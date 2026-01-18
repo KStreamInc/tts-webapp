@@ -122,7 +122,7 @@ const ContactForm = () => {
             onChange={handleChange}
             disabled={isSubmitting}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700 transition text-black disabled:bg-gray-100 disabled:cursor-not-allowed"
-            placeholder="+94 XX XXX XXXX"
+            placeholder="your phone number"
           />
         </div>
 
